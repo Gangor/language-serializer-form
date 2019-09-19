@@ -1,0 +1,14 @@
+{
+  "button1": { "Text": "Button 1", "BackColor": "red" },
+  "button2": { "Text": "Button 2" },
+  "button3": { "Text": "Button 3" },
+  "button4": { "Text": "Button 4" },
+  "fichierToolStripMenuItem": { "Text": "File" },
+  "ouvrirToolStripMenuItem": { "Text": "Open" },
+  "enregistrerToolStripMenuItem": { "Text": "Save" },
+  "enregistrerSousToolStripMenuItem": { "Text": "Save as" },
+  "quitterToolStripMenuItem": { "Text": "Exit" },
+  "aideToolStripMenuItem": { "Text": "Help" },
+  "aProposToolStripMenuItem": { "Text": "About" },
+  "Text": "Test"
+}
