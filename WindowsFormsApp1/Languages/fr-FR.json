@@ -1,54 +1,98 @@
+// See properties from the doc
+// Sample for button
+// https://docs.microsoft.com/fr-fr/dotnet/api/system.windows.forms.button?view=netframework-4.7.2
+//
 {
+  "locale": "fr-FR",
   "name": "Français",
   "pagecode": "window-1252",
-  "locale": "fr-FR",
+
+  "Errors": {
+    "Test": "Ceci est un exemple d'erreur !"
+  },
+
+  "Etc": {
+    "Error": "Erreur"
+  },
 
   "Form1": {
+    "aideToolStripMenuItem": {
+      "Text": "Aide"
+    },
+    "aProposToolStripMenuItem": {
+      "Text": "A propos"
+    },
     "button1": {
-      "Text": "Dialogue"
+      "Text": "Grille"
     },
     "button2": {
       "Text": "Error",
       "BackColor": "red"
     },
     "button3": {
-      "Text": "Bouton 3"
-    },
-    "button4": {
-      "Text": "Bouton 4"
-    },
-    "fichierToolStripMenuItem": {
-      "Text": "Fichier"
-    },
-    "ouvrirToolStripMenuItem": {
-      "Text": "Ouvrir"
-    },
-    "enregistrerToolStripMenuItem": {
-      "Text": "Sauvegarder"
+      "Text": "Confirmer"
     },
     "enregistrerSousToolStripMenuItem": {
       "Text": "Sauvegarder sous"
     },
+    "enregistrerToolStripMenuItem": {
+      "Text": "Sauvegarder"
+    },
+    "fichierToolStripMenuItem": {
+      "Text": "Fichier"
+    },
+    "groupBox1": {
+      "Text": "Choix"
+    },
+    "ouvrirToolStripMenuItem": {
+      "Text": "Ouvrir"
+    },
     "quitterToolStripMenuItem": {
       "Text": "Quitter"
     },
-    "aideToolStripMenuItem": {
-      "Text": "Aide"
+    "radioButton1": {
+      "Text": "radio 1"
     },
-    "aProposToolStripMenuItem": {
-      "Text": "A propos"
-    }
+    "radioButton2": {
+      "Text": "radio 2"
+    },
+    "radioButton3": {
+      "Text": "radio 3"
+    },
+    "radioButton4": {
+      "Text": "radio 4"
+    },
+    "radioButton5": {
+      "Text": "radio 5"
+    },
+    "radioButton6": {
+      "Text": "radio 6"
+    },
+    "radioButton7": {
+      "Text": "radio 7"
+    },
+    "radioButton8": {
+      "Text": "radio 8"
+    },
+    "tabPage1": {
+      "Text": "Réglages"
+    },
+    "tabPage2": {
+      "Text": "Règles"
+    },
+    "toolStripStatusLabel1": {
+      "Text": "Prêt"
+    },
+    "Text": "Principal",
+    "RightToLeft": false
   },
 
   "Form2": {
-
+    "Text": "Grille",
+    "RightToLeft": false
   },
 
   "Grid": {
     "FileNameColumn": "Nom de fichier"
-  },
-
-  "Errors": {
-    "Test": "Ceci est un exemple d'erreur !"
   }
 }

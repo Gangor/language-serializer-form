@@ -1,7 +1,19 @@
+// See properties from the doc
+// Sample for button
+// https://docs.microsoft.com/fr-fr/dotnet/api/system.windows.forms.button?view=netframework-4.7.2
+//
 {
   "name": "English",
   "pagecode": "window-1252",
   "locale": "en-US",
+
+  "Etc": {
+    "Error": "Error"
+  },
+
+  "Errors": {
+    "Test": "This is a error sample !"
+  },
 
   "Form1": {
     "aideToolStripMenuItem": {
@@ -11,17 +23,14 @@
       "Text": "About"
     },
     "button1": {
-      "Text": "Dialog"
+      "Text": "Grid"
     },
     "button2": {
       "Text": "Error",
       "BackColor": "red"
     },
     "button3": {
-      "Text": "Button 3"
-    },
-    "button4": {
-      "Text": "Button 4"
+      "Text": "Confirm"
     },
     "enregistrerSousToolStripMenuItem": {
       "Text": "Save as"
@@ -32,23 +41,58 @@
     "fichierToolStripMenuItem": {
       "Text": "File"
     },
+    "groupBox1": {
+      "Text": "Choose"
+    },
     "ouvrirToolStripMenuItem": {
       "Text": "Open"
     },
     "quitterToolStripMenuItem": {
       "Text": "Exit"
-    }
+    },
+    "radioButton1": {
+      "Text": "radio 1"
+    },
+    "radioButton2": {
+      "Text": "radio 2"
+    },
+    "radioButton3": {
+      "Text": "radio 3"
+    },
+    "radioButton4": {
+      "Text": "radio 4"
+    },
+    "radioButton5": {
+      "Text": "radio 5"
+    },
+    "radioButton6": {
+      "Text": "radio 6"
+    },
+    "radioButton7": {
+      "Text": "radio 7"
+    },
+    "radioButton8": {
+      "Text": "radio 8"
+    },
+    "tabPage1": {
+      "Text": "Settings"
+    },
+    "tabPage2": {
+      "Text": "Rules"
+    },
+    "toolStripStatusLabel1": {
+      "Text": "Ready"
+    },
+    "Text": "Main",
+    "RightToLeft": false
   },
 
   "Form2": {
-
+    "Text": "Grid",
+    "RightToLeft": false
   },
 
   "Grid": {
     "FileNameColumn": "FileName"
-  },
-
-  "Errors": {
-    "Test": "This is a error sample !"
   }
 }

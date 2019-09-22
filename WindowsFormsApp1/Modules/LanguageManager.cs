@@ -1,52 +1,39 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Windows.Forms;
 using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1.Modules
 {
-    public class MyContractResolver : DefaultContractResolver
-    {
-        protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
-        {
-            var props = type.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
-                            .Select(p => base.CreateProperty(p, memberSerialization))
-                        .Union(type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
-                                   .Select(f => base.CreateProperty(f, memberSerialization)))
-                        .ToList();
-            props.ForEach(p => { p.Writable = true; p.Readable = true; });
-            return props;
-        }
-    }
-
     public class LanguageManager
     {
-        public List<Control> Controls { get; private set; } = new List<Control>();
-        public List<Language> Languages { get; private set; } = new List<Language>();
+        public List<Control> Controls { get; private set; }
+        public List<Language> Languages { get; private set; }
 
         /// <summary>
         /// Current language use
         /// </summary>
-        private Language current = null;
+        public Language Current = null;
 
         /// <summary>
         /// Path to locale file
         /// </summary>
-        private string path = string.Empty;
+        private readonly string Path = string.Empty;
 
         /// <summary>
         /// Initialize manger language
         /// </summary>
-        /// <param name="folder"></param>
-        public LanguageManager(string folder)
+        /// <param name="path"></param>
+        public LanguageManager(string path)
         {
-            path = folder;
+            Path = path;
+            Controls = new List<Control>();
+            Languages = new List<Language>();
+            //
             Load();
         }
 
@@ -57,18 +44,14 @@ namespace WindowsFormsApp1.Modules
         {
             try
             {
-                JObject obj = JObject.Parse(current.Json);
-                string form = obj[control.Name].ToString();
+                JObject obj = JObject.Parse(Current.Json);
 
                 foreach (var grid in control.Controls.OfType<DataGridView>())
                     foreach (DataGridViewColumn column in grid.Columns)
                         column.HeaderText = obj["Grid"][column.Name].ToString();
 
-                JsonConvert.PopulateObject(form, control, new JsonSerializerSettings()
-                {
-                    ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
-                    ContractResolver = new MyContractResolver()
-                });
+                JsonConvert.PopulateObject(obj[control.Name].ToString(), control, 
+                    new JsonSerializerSettings() { ContractResolver = new ContractAllResolver() });
             }
             catch (Exception ex)
             {
@@ -81,7 +64,7 @@ namespace WindowsFormsApp1.Modules
         /// </summary>
         public void ApplyLocales()
         {
-            if (current == null)
+            if (Current == null)
                 return;
 
             foreach (var control in Controls)
@@ -95,10 +78,10 @@ namespace WindowsFormsApp1.Modules
         {
             try
             {
-                if (!Directory.Exists(path))
+                if (!Directory.Exists(Path))
                     return;
 
-                foreach (var file in Directory.GetFiles(path))
+                foreach (var file in Directory.GetFiles(Path))
                 {
                     var json = File.ReadAllText(file);
                     var language = JsonConvert.DeserializeObject<Language>(json);
@@ -107,16 +90,8 @@ namespace WindowsFormsApp1.Modules
                     Languages.Add(language);
                 }
             }
-            catch { }
-        }
-
-        /// <summary>
-        /// Get all locale name
-        /// </summary>
-        /// <returns>Loaded locale name array</returns>
-        public string[] GetNames()
-        {
-            return Languages.Select(u => u.Name).ToArray();
+            catch
+            { }
         }
 
         /// <summary>
@@ -125,7 +100,7 @@ namespace WindowsFormsApp1.Modules
         /// <returns>Index of current language is defined otherwise 0</returns>
         public int GetIndex()
         {
-            return current != null ? Languages.IndexOf(current) : 0;
+            return Current != null ? Languages.IndexOf(Current) : 0;
         }
 
         /// <summary>
@@ -136,16 +111,15 @@ namespace WindowsFormsApp1.Modules
         public string GetString(string key)
         {
             string str = "null";
+
             try
             {
-                str = JObject.Parse(current.Json)
+                str = JObject.Parse(Current.Json)
                     .SelectToken(key)
-                    .ToString();                
+                    .ToString();
             }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch
+            { }
 
             return str;
         }
@@ -162,7 +136,7 @@ namespace WindowsFormsApp1.Modules
 
             Controls.Add(control);
 
-            if (current != null)
+            if (Current != null)
                 ApplyLocale(control);
 
             return true;
@@ -171,16 +145,28 @@ namespace WindowsFormsApp1.Modules
         /// <summary>
         /// Change current language
         /// </summary>
-        /// <param name="name">Language to set</param>
+        /// <param name="locale">Language to set</param>
         /// <returns>Update language result</returns>
-        public bool SetLanguage(string name)
+        public bool SetLanguage(string locale)
         {
-            var language = Languages.SingleOrDefault(u => u.Name == name);
+            var language = Languages.SingleOrDefault(u => u.Locale == locale);
             if (language == null)
                 return false;
 
-            current = language;
+            Current = language;
             return true;
+        }
+
+        /// <summary>
+        /// Show message box with localization
+        /// </summary>
+        /// <param name="text">Token text</param>
+        /// <param name="caption">Token caption</param>
+        /// <param name="buttons"></param>
+        /// <param name="icon"></param>
+        public void ShowMessageBox(string text, string caption, MessageBoxButtons buttons, MessageBoxIcon icon)
+        {
+            MessageBox.Show(GetString(text), GetString(caption), buttons, icon);
         }
 
         /// <summary>

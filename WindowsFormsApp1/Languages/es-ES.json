@@ -1,54 +1,98 @@
+// See properties from the doc
+// Sample for button
+// https://docs.microsoft.com/fr-fr/dotnet/api/system.windows.forms.button?view=netframework-4.7.2
+//
 {
   "name": "Deutsch",
   "pagecode": "window-1252",
   "locale": "es-ES",
 
+  "Etc": {
+    "Error": "Fehler"
+  },
+
+  "Errors": {
+    "Test": "Dies ist ein Beispiel für einen Fehler!"
+  },
+
   "Form1": {
+    "aideToolStripMenuItem": {
+      "Text": "Hilfe"
+    },
+    "aProposToolStripMenuItem": {
+      "Text": "Über"
+    },
     "button1": {
-      "Text": "Dialog"
+      "Text": "Gitter"
     },
     "button2": {
       "Text": "Fehler",
       "BackColor": "red"
     },
     "button3": {
-      "Text": "Taste 3"
-    },
-    "button4": {
-      "Text": "Taste 4"
-    },
-    "fichierToolStripMenuItem": {
-      "Text": "Datei"
-    },
-    "ouvrirToolStripMenuItem": {
-      "Text": "Öffnen"
-    },
-    "enregistrerToolStripMenuItem": {
-      "Text": "Sparen"
+      "Text": "bestätigen"
     },
     "enregistrerSousToolStripMenuItem": {
       "Text": "Speichern als"
     },
+    "enregistrerToolStripMenuItem": {
+      "Text": "Sparen"
+    },
+    "fichierToolStripMenuItem": {
+      "Text": "Datei"
+    },
+    "groupBox1": {
+      "Text": "Wahl"
+    },
+    "ouvrirToolStripMenuItem": {
+      "Text": "Öffnen"
+    },
     "quitterToolStripMenuItem": {
       "Text": "Ausgang"
     },
-    "aideToolStripMenuItem": {
-      "Text": "Hilfe"
+    "radioButton1": {
+      "Text": "Radio 1"
     },
-    "aProposToolStripMenuItem": {
-      "Text": "Über"
-    }
+    "radioButton2": {
+      "Text": "Radio 2"
+    },
+    "radioButton3": {
+      "Text": "Radio 3"
+    },
+    "radioButton4": {
+      "Text": "Radio 4"
+    },
+    "radioButton5": {
+      "Text": "Radio 5"
+    },
+    "radioButton6": {
+      "Text": "Radio 6"
+    },
+    "radioButton7": {
+      "Text": "Radio 7"
+    },
+    "radioButton8": {
+      "Text": "Radio 8"
+    },
+    "tabPage1": {
+      "Text": "Einstellung"
+    },
+    "tabPage2": {
+      "Text": "Regeln"
+    },
+    "toolStripStatusLabel1": {
+      "Text": "Darlehen"
+    },
+    "Text": "Principale",
+    "RightToLeft": false
   },
 
   "Form2": {
-
+    "Text": "Gitter",
+    "RightToLeft": false
   },
 
   "Grid": {
     "FileNameColumn": "Dateiname"
-  },
-
-  "Errors": {
-    "Test": "Dies ist ein Beispiel für einen Fehler!"
   }
 }

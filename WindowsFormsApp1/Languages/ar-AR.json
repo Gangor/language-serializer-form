@@ -1,0 +1,97 @@
+{
+  "name": "العربية",
+  "pagecode": "window-1256",
+  "locale": "ar-AR",
+
+  "Etc": {
+    "Error": "خطأ"
+  },
+
+  "Errors": {
+    "Test": "هذا مثال على خطأ!"
+  },
+
+  "Form1": {
+    "aideToolStripMenuItem": {
+      "Text": "مساعدة"
+    },
+    "aProposToolStripMenuItem": {
+      "Text": "حول"
+    },
+    "button1": {
+      "Text": "شبكة"
+    },
+    "button2": {
+      "Text": "خطأ",
+      "BackColor": "red"
+    },
+    "button3": {
+      "Text": "أكد"
+    },
+    "enregistrerSousToolStripMenuItem": {
+      "Text": "حفظ باسم"
+    },
+    "enregistrerToolStripMenuItem": {
+      "Text": "أدخر"
+    },
+    "fichierToolStripMenuItem": {
+      "Text": "ملف"
+    },
+    "groupBox1": {
+      "Text": "انتخابات"
+    },
+    "ouvrirToolStripMenuItem": {
+      "Text": "فتح"
+    },
+    "quitterToolStripMenuItem": {
+      "Text": "إنتاج"
+    },
+    "radioButton1": {
+      "Text": "راديو 1"
+    },
+    "radioButton2": {
+      "Text": "راديو 2"
+    },
+    "radioButton3": {
+      "Text": "راديو 3"
+    },
+    "radioButton4": {
+      "Text": "راديو 4"
+    },
+    "radioButton5": {
+      "Text": "راديو 5"
+    },
+    "radioButton6": {
+      "Text": "راديو 6"
+    },
+    "radioButton7": {
+      "Text": "راديو 7"
+    },
+    "radioButton8": {
+      "Text": "راديو 8"
+    },
+    "tabPage1": {
+      "Text": "تعديل"
+    },
+    "tabPage2": {
+      "Text": "قواعد"
+    },
+    "toolStripComboBox1": {
+      "ComboBox": { }
+    },
+    "toolStripStatusLabel1": {
+      "Text": "قرض"
+    },
+    "Text": "رئيسي",
+    "RightToLeft": true
+  },
+
+  "Form2": {
+    "Text": "جريد",
+    "RightToLeft": true
+  },
+
+  "Grid": {
+    "FileNameColumn": "اسم الملف"
+  }
+}
