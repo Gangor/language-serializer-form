@@ -1,14 +1,54 @@
 {
-  "button1": { "Text": "Bouton 1", "BackColor": "blue" },
-  "button2": { "Text": "Bouton 2" },
-  "button3": { "Text": "Bouton 3" },
-  "button4": { "Text": "Bouton 4" },
-  "fichierToolStripMenuItem": { "Text": "Fichier" },
-  "ouvrirToolStripMenuItem": { "Text": "Ouvrir" },
-  "enregistrerToolStripMenuItem": { "Text": "Sauvegarder" },
-  "enregistrerSousToolStripMenuItem": { "Text": "Sauvegarder sous" },
-  "quitterToolStripMenuItem": { "Text": "Quitter" },
-  "aideToolStripMenuItem": { "Text": "Aide" },
-  "aProposToolStripMenuItem": { "Text": "A propos" },
-  "Text": "Teste"
+  "name": "Français",
+  "pagecode": "window-1252",
+  "locale": "fr-FR",
+
+  "Form1": {
+    "button1": {
+      "Text": "Dialogue"
+    },
+    "button2": {
+      "Text": "Error",
+      "BackColor": "red"
+    },
+    "button3": {
+      "Text": "Bouton 3"
+    },
+    "button4": {
+      "Text": "Bouton 4"
+    },
+    "fichierToolStripMenuItem": {
+      "Text": "Fichier"
+    },
+    "ouvrirToolStripMenuItem": {
+      "Text": "Ouvrir"
+    },
+    "enregistrerToolStripMenuItem": {
+      "Text": "Sauvegarder"
+    },
+    "enregistrerSousToolStripMenuItem": {
+      "Text": "Sauvegarder sous"
+    },
+    "quitterToolStripMenuItem": {
+      "Text": "Quitter"
+    },
+    "aideToolStripMenuItem": {
+      "Text": "Aide"
+    },
+    "aProposToolStripMenuItem": {
+      "Text": "A propos"
+    }
+  },
+
+  "Form2": {
+
+  },
+
+  "Grid": {
+    "FileNameColumn": "Nom de fichier"
+  },
+
+  "Errors": {
+    "Test": "Ceci est un exemple d'erreur !"
+  }
 }

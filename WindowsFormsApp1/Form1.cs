@@ -1,55 +1,40 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Windows.Forms;
-using Newtonsoft.Json;
-using WindowsFormsApp1.Models;
+﻿using System.Windows.Forms;
+using WindowsFormsApp1.Modules;
 
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        public List<Language> Langs { get; set; }
-        public Language Language { get; set; }
+        public static LanguageManager LanguageManager { get; set; }
 
         public Form1()
         {
             InitializeComponent();
 
-            /// Load language index info
-            {
-                string path = "languages/index.json";
+            LanguageManager = new LanguageManager("Languages");
+            //LanguageManager.SetLanguage(opt.config.language);
 
-                if (File.Exists(path))
-                {
-                    string json = File.ReadAllText(path);
+            Shown += (e, sender)        => LanguageManager.Register(this);
+            FormClosed += (e, sender)   => LanguageManager.Unregister(this);
 
-                    Langs = JsonConvert.DeserializeObject<List<Language>>(json);
-
-                    /// Fill combobox languages
-                    for (int i = 0; i < Langs.Count; i++)
-                        comboBox1.Items.Add(Langs[i].Name);
-                }
-            }
-
-            comboBox1.SelectedIndex = 0;
+            comboBox1.Items.AddRange(LanguageManager.GetNames());
+            comboBox1.SelectedIndex = LanguageManager.GetIndex();
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            Language = Langs[comboBox1.SelectedIndex];
+            if (LanguageManager.SetLanguage(comboBox1.Text))
+                LanguageManager.ApplyLocales();
+        }
 
-            /// Load language properties
-            {
-                string path = $"languages/{Language.Flag}.json";
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            new Form2().Show();
+        }
 
-                if (File.Exists(path))
-                {
-                    /// Merge property inside current object
-                    JsonConvert.PopulateObject(File.ReadAllText(path), this);
-                    Refresh();
-                }
-                else throw new System.Exception("[Critical] File not found !!");
-            }
+        private void button2_Click(object sender, System.EventArgs e)
+        {
+            MessageBox.Show(LanguageManager.GetString("Errors.Test"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

@@ -1,14 +1,54 @@
 {
-  "button1": { "Text": "Taste 1", "BackColor": "yellow" },
-  "button2": { "Text": "Taste 2" },
-  "button3": { "Text": "Taste 3" },
-  "button4": { "Text": "Taste 4" },
-  "fichierToolStripMenuItem": { "Text": "Datei" },
-  "ouvrirToolStripMenuItem": { "Text": "Öffnen" },
-  "enregistrerToolStripMenuItem": { "Text": "Sparen" },
-  "enregistrerSousToolStripMenuItem": { "Text": "Speichern als" },
-  "quitterToolStripMenuItem": { "Text": "Ausgang" },
-  "aideToolStripMenuItem": { "Text": "Hilfe" },
-  "aProposToolStripMenuItem": { "Text": "Über" },
-  "Text": "Prüfung"
+  "name": "Deutsch",
+  "pagecode": "window-1252",
+  "locale": "es-ES",
+
+  "Form1": {
+    "button1": {
+      "Text": "Dialog"
+    },
+    "button2": {
+      "Text": "Fehler",
+      "BackColor": "red"
+    },
+    "button3": {
+      "Text": "Taste 3"
+    },
+    "button4": {
+      "Text": "Taste 4"
+    },
+    "fichierToolStripMenuItem": {
+      "Text": "Datei"
+    },
+    "ouvrirToolStripMenuItem": {
+      "Text": "Öffnen"
+    },
+    "enregistrerToolStripMenuItem": {
+      "Text": "Sparen"
+    },
+    "enregistrerSousToolStripMenuItem": {
+      "Text": "Speichern als"
+    },
+    "quitterToolStripMenuItem": {
+      "Text": "Ausgang"
+    },
+    "aideToolStripMenuItem": {
+      "Text": "Hilfe"
+    },
+    "aProposToolStripMenuItem": {
+      "Text": "Über"
+    }
+  },
+
+  "Form2": {
+
+  },
+
+  "Grid": {
+    "FileNameColumn": "Dateiname"
+  },
+
+  "Errors": {
+    "Test": "Dies ist ein Beispiel für einen Fehler!"
+  }
 }

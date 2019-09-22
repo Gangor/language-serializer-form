@@ -1,14 +1,54 @@
 {
-  "button1": { "Text": "Button 1", "BackColor": "red" },
-  "button2": { "Text": "Button 2" },
-  "button3": { "Text": "Button 3" },
-  "button4": { "Text": "Button 4" },
-  "fichierToolStripMenuItem": { "Text": "File" },
-  "ouvrirToolStripMenuItem": { "Text": "Open" },
-  "enregistrerToolStripMenuItem": { "Text": "Save" },
-  "enregistrerSousToolStripMenuItem": { "Text": "Save as" },
-  "quitterToolStripMenuItem": { "Text": "Exit" },
-  "aideToolStripMenuItem": { "Text": "Help" },
-  "aProposToolStripMenuItem": { "Text": "About" },
-  "Text": "Test"
+  "name": "English",
+  "pagecode": "window-1252",
+  "locale": "en-US",
+
+  "Form1": {
+    "aideToolStripMenuItem": {
+      "Text": "Help"
+    },
+    "aProposToolStripMenuItem": {
+      "Text": "About"
+    },
+    "button1": {
+      "Text": "Dialog"
+    },
+    "button2": {
+      "Text": "Error",
+      "BackColor": "red"
+    },
+    "button3": {
+      "Text": "Button 3"
+    },
+    "button4": {
+      "Text": "Button 4"
+    },
+    "enregistrerSousToolStripMenuItem": {
+      "Text": "Save as"
+    },
+    "enregistrerToolStripMenuItem": {
+      "Text": "Save"
+    },
+    "fichierToolStripMenuItem": {
+      "Text": "File"
+    },
+    "ouvrirToolStripMenuItem": {
+      "Text": "Open"
+    },
+    "quitterToolStripMenuItem": {
+      "Text": "Exit"
+    }
+  },
+
+  "Form2": {
+
+  },
+
+  "Grid": {
+    "FileNameColumn": "FileName"
+  },
+
+  "Errors": {
+    "Test": "This is a error sample !"
+  }
 }
